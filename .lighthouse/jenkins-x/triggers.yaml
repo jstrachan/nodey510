@@ -10,6 +10,6 @@ spec:
       rerun_command: "/retest"
       source: "pullrequest.yaml"
   postsubmits:
-    - name: release
-      context: "release"
+    - name: main
+      context: "main"
       source: "release.yaml"
