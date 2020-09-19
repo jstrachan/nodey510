@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-x7wnz-1
+  name: jenkins-x-quickstarts-node-http-4gwzg-1
 spec:
   params:
   - name: version
@@ -184,6 +184,19 @@ spec:
             value: $(inputs.params.revision)
           image: gcr.io/jenkinsxio/builder-jx:2.1.32-662
           name: git-clone
+          resources: {}
+          volumeMounts:
+          - mountPath: /home/jenkins
+            name: workspace-volume
+          workingDir: /workspace
+        - args:
+          - gitops
+          - git
+          - setup
+          command:
+          - jx
+          image: gcr.io/jenkinsxio/jx-cli:latest
+          name: git-setup
           resources: {}
           volumeMounts:
           - mountPath: /home/jenkins
