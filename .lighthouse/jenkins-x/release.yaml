@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-7f9p2-1
+  name: jenkins-x-quickstarts-node-http-5sxzx-1
 spec:
   params:
   - name: version
@@ -18,6 +18,57 @@ spec:
     - default: 0.0.1
       description: the version number for this pipeline which is used as a tag on docker images and helm charts
       name: version
+      type: string
+    - description: git url to clone
+      name: REPO_URL
+      type: string
+    - default: master
+      description: git revision to checkout (branch, tag, sha, ref…)
+      name: revision
+      type: string
+    - default: source
+      description: subdirectory inside of /workspace to clone the git repo
+      name: subdirectory
+      type: string
+    - default: ""
+      description: git repository owner name
+      name: repo_owner
+      type: string
+    - default: ""
+      description: git repository name
+      name: repo_name
+      type: string
+    - default: ""
+      description: app name
+      name: app_name
+      type: string
+    - default: docker.io
+      description: container registry
+      name: container_registry
+      type: string
+    - default: jenkins-x-labs-bdd
+      description: container registry owner name
+      name: container_registry_owner
+      type: string
+    - default: "1"
+      description: build number
+      name: build_id
+      type: string
+    - default: jenkins-x@googlegroups.com
+      description: pipeline git author email
+      name: git_author_email
+      type: string
+    - default: jenkins-x-bot
+      description: pipeline git author name
+      name: git_author_name
+      type: string
+    - default: jenkins-x@googlegroups.com
+      description: pipeline git committer email
+      name: git_committer_email
+      type: string
+    - default: jenkins-x-bot
+      description: pipeline git committer name
+      name: git_committer_name
       type: string
     tasks:
     - name: from-build-pack
