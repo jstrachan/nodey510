@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-5sxzx-1
+  name: jenkins-x-quickstarts-node-http-x7wnz-1
 spec:
   params:
   - name: version
@@ -75,6 +75,32 @@ spec:
       params:
       - name: version
         value: $(params.version)
+      - name: REPO_URL
+        value: $(params.REPO_URL)
+      - name: revision
+        value: $(params.revision)
+      - name: subdirectory
+        value: $(params.subdirectory)
+      - name: repo_owner
+        value: $(params.repo_owner)
+      - name: repo_name
+        value: $(params.repo_name)
+      - name: app_name
+        value: $(params.app_name)
+      - name: container_registry
+        value: $(params.container_registry)
+      - name: container_registry_owner
+        value: $(params.container_registry_owner)
+      - name: build_id
+        value: $(params.build_id)
+      - name: git_author_email
+        value: $(params.git_author_email)
+      - name: git_author_name
+        value: $(params.git_author_name)
+      - name: git_committer_email
+        value: $(params.git_committer_email)
+      - name: git_committer_name
+        value: $(params.git_committer_name)
       resources: {}
       taskSpec:
         params:
