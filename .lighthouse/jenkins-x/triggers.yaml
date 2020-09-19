@@ -14,7 +14,7 @@ spec:
       context: "main"
       source: "release.yaml"
       pipeline_run_params:
-        - name: url
+        - name: repo_url
           valueTemplate: "https://github.com/jstrachan/nodey510.git"
         - name: container_registry_owner
           valueTemplate: "jenkins-x-labs-bdd"
