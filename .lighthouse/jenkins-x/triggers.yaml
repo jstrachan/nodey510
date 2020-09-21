@@ -13,6 +13,9 @@ spec:
     - name: main
       context: "main"
       source: "release.yaml"
+      branches:
+        entries:
+          - master
       pipeline_run_params:
         - name: repo_url
           valueTemplate: "https://github.com/jstrachan/nodey510.git"
