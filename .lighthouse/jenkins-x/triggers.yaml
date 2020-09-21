@@ -1,22 +1,17 @@
 apiVersion: config.lighthouse.jenkins-x.io/v1alpha1
 kind: TriggerConfig
 spec:
-#  presubmits:
-#    - name: ci
-#      context: "ci"
-#      always_run: true
-#      optional: false
-#      trigger: "/test"
-#      rerun_command: "/retest"
-#      source: "pullrequest.yaml"
+  presubmits:
+  - name: pr
+	context: "pr"
+	always_run: true
+	optional: false
+	trigger: "/test"
+	rerun_command: "/retest"
+	source: "pullrequest.yaml"
   postsubmits:
-    - name: main
-      context: "main"
-      source: "release.yaml"
-      branches:
-        - master
-      pipeline_run_params:
-        - name: repo_url
-          valueTemplate: "https://github.com/jstrachan/nodey510.git"
-        - name: container_registry_owner
-          valueTemplate: "jenkins-x-labs-bdd"
+  - name: release
+	context: "release"
+	source: "release.yaml"
+	branches:
+	- master
