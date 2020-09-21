@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-lvp2h-1
+  name: jenkins-x-quickstarts-node-http-gghvv-1
 spec:
   params:
   - name: version
@@ -112,14 +112,6 @@ spec:
           resources: {}
           workingDir: /workspace
         - args:
-          - gitops
-          - variables
-          command:
-          - jx
-          image: gcr.io/jenkinsxio/jx-cli:latest
-          name: jx-variables
-          resources: {}
-        - args:
           - '[ -d /builder/home ] || mkdir -p /builder && ln -s /tekton/home /builder/home'
           command:
           - /bin/sh
@@ -136,6 +128,14 @@ spec:
           - jx
           image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
           name: git-merge
+          resources: {}
+        - args:
+          - gitops
+          - variables
+          command:
+          - jx
+          image: gcr.io/jenkinsxio/jx-cli:latest
+          name: jx-variables
           resources: {}
         - args:
           - jx step credential -s npm-token -k file -f /builder/home/.npmrc --optional=true
