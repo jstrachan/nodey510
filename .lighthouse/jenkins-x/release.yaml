@@ -180,7 +180,7 @@ spec:
           command:
           - /bin/sh
           - -c
-          image: gcr.io/jenkinsxio/jx-gitops:0.0.0-SNAPSHOT-PR-205-1
+          image: gcr.io/jenkinsxio/jx-gitops:0.0.0-SNAPSHOT-PR-205-2
           name: promote-helm-release
           resources: {}
         - args:
