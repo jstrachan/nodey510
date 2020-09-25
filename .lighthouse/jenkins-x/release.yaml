@@ -58,7 +58,7 @@ spec:
     - description: the git sha of the base of the pull request
       name: PULL_BASE_SHA
       type: string
-    - default: ""
+    - default: " "
       description: git pull request number
       name: PULL_NUMBER
       type: string
