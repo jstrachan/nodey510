@@ -196,7 +196,7 @@ spec:
           command:
           - /bin/sh
           - -c
-          image: gcr.io/jenkinsxio/jx-promote:0.0.118
+          image: gcr.io/jenkinsxio/jx-promote:0.0.0-SNAPSHOT-PR-69-1
           name: promote-jx-promote
           resources: {}
         volumes:
