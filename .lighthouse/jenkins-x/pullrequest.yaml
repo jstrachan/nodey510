@@ -261,11 +261,11 @@ spec:
           name: build-container-build
           resources: {}
         - args:
-          - source .jx/variables.sh && jx preview create
+          - "source .jx/variables.sh && jx preview create"
           command:
           - /bin/sh
           - -c
-          image: gcr.io/jenkinsxio/jx-cli:3.0.370
+          image: gcr.io/jenkinsxio/jx-cli:latest
           name: promote-jx-preview
           resources: {}
         volumes:
