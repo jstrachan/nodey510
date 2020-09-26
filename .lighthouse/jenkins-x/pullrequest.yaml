@@ -211,7 +211,7 @@ spec:
           - --verbose
           command:
           - jx
-          image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
+          image: gcr.io/jenkinsxio/builder-jx:latest
           name: git-merge
           resources: {}
         - args:
