@@ -210,11 +210,11 @@ spec:
           - merge
           - --verbose
           - --baseSHA
-          - $PULL_BASE_SHA
+          - $(params.PULL_BASE_SHA)
           - --sha
-          - $PULL_PULL_SHA
+          - $(params.PULL_PULL_SHA)
           - --baseBranch
-          - $PULL_BASE_REF
+          - $(params.PULL_BASE_REF)
           command:
           - jx
           image: gcr.io/jenkinsxio/builder-jx:latest
