@@ -209,7 +209,7 @@ spec:
           - git
           - merge
           - --verbose
-          - --baseSha
+          - --baseSHA
           - $PULL_BASE_SHA
           - --sha
           - $PULL_PULL_SHA
