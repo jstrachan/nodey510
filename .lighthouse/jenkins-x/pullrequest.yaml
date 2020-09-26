@@ -262,6 +262,14 @@ spec:
           resources: {}
         - args:
           - -c
+          - "ls -al /workspace/source/.jx && cat /workspace/source/.jx/variables.sh"
+          command:
+          - /bin/sh
+          image: gcr.io/jenkinsxio/jx-cli:latest
+          name: preview-debug
+          resources: {}
+        - args:
+          - -c
           - "source /workspace/source/.jx/variables.sh && jx preview create"
           command:
           - /bin/sh
