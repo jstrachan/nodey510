@@ -261,7 +261,7 @@ spec:
           name: build-container-build
           resources: {}
         - args:
-          - jx preview create --app $APP_NAME
+          - source .jx/variables.sh && jx preview create
           command:
           - /bin/sh
           - -c
