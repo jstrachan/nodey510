@@ -8,35 +8,35 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-66mn2-1
+  name: jenkins-x-quickstarts-node-http-4qdlj-1
 spec:
   params:
   - name: BUILD_ID
-    value: $(params.BUILD_ID)
+    value: ""
   - name: JOB_NAME
-    value: $(params.JOB_NAME)
+    value: ""
   - name: JOB_SPEC
-    value: $(params.JOB_SPEC)
+    value: ""
   - name: JOB_TYPE
-    value: $(params.JOB_TYPE)
+    value: ""
   - name: PULL_BASE_REF
-    value: $(params.PULL_BASE_REF)
+    value: ""
   - name: PULL_BASE_SHA
-    value: $(params.PULL_BASE_SHA)
+    value: ""
   - name: PULL_NUMBER
-    value: $(params.PULL_NUMBER)
+    value: ""
   - name: PULL_PULL_REF
-    value: $(params.PULL_PULL_REF)
+    value: ""
   - name: PULL_PULL_SHA
-    value: $(params.PULL_PULL_SHA)
+    value: ""
   - name: PULL_REFS
-    value: $(params.PULL_REFS)
+    value: ""
   - name: REPO_NAME
-    value: $(params.REPO_NAME)
+    value: ""
   - name: REPO_OWNER
-    value: $(params.REPO_OWNER)
+    value: ""
   - name: REPO_URL
-    value: $(params.REPO_URL)
+    value: ""
   pipelineSpec:
     params:
     - description: the unique build number
