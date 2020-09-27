@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-mn6qk-1
+  name: jenkins-x-quickstarts-node-http-pnn58-1
 spec:
   pipelineSpec:
     params:
@@ -217,7 +217,7 @@ spec:
           - $(params.PULL_BASE_REF)
           command:
           - jx
-          image: gcr.io/jenkinsxio/builder-jx:latest
+          image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
           name: git-merge
           resources: {}
         - args:
@@ -262,10 +262,10 @@ spec:
           resources: {}
         - args:
           - -c
-          - "source /workspace/source/.jx/variables.sh && jx preview create"
+          - source /workspace/source/.jx/variables.sh && jx preview create
           command:
           - /bin/bash
-          image: gcr.io/jenkinsxio/jx-cli:latest
+          image: gcr.io/jenkinsxio/jx-cli:3.0.370
           name: promote-jx-preview
           resources: {}
         volumes:
