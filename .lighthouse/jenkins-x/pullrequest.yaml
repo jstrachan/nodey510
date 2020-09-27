@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-twkc6-1
+  name: jenkins-x-quickstarts-node-http-qlsvp-1
 spec:
   pipelineSpec:
     params:
@@ -265,7 +265,7 @@ spec:
           - source /workspace/source/.jx/variables.sh && jx preview create
           command:
           - /bin/bash
-          image: gcr.io/jenkinsxio/jx-cli:3.0.376
+          image: gcr.io/jenkinsxio/jx-cli:latest
           name: promote-jx-preview
           resources: {}
         volumes:
