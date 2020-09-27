@@ -237,7 +237,7 @@ spec:
           name: git-merge
           resources: {}
         - args:
-          - ls -al; cat VERSION
+          - ls -al; pwd; cat VERSION
           command:
           - /bin/sh
           - -c
