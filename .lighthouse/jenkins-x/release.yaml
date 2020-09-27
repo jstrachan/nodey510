@@ -8,7 +8,7 @@ metadata:
     jenkins.io/pipelineType: build
     owner: jenkins-x-quickstarts
     repository: node-http
-  name: jenkins-x-quickstarts-node-http-rg4tj-1
+  name: jenkins-x-quickstarts-node-http-n67k7-1
 spec:
   pipelineSpec:
     params:
@@ -197,21 +197,28 @@ spec:
           resources: {}
           workingDir: /workspace
         - args:
+          - step
+          - git
+          - merge
+          - --verbose
+          - --baseSHA
+          - $(params.PULL_BASE_SHA)
+          - --sha
+          - $(params.PULL_PULL_SHA)
+          - --baseBranch
+          - $(params.PULL_BASE_REF)
+          command:
+          - jx
+          image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
+          name: git-merge
+          resources: {}
+        - args:
           - -c
           - jx step next-version --filename package.json
           command:
           - /bin/sh
-          #image: gcr.io/jenkinsxio-labs-private/jxl:0.0.136
-          image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
+          image: gcr.io/jenkinsxio-labs-private/jxl:0.0.136
           name: next-version
-          resources: {}
-        - args:
-          - ls -al; pwd
-          command:
-          - /bin/sh
-          - -c
-          image: gcr.io/jenkinsxio/jx-cli:latest
-          name: version-debug2
           resources: {}
         - args:
           - -c
@@ -230,34 +237,8 @@ spec:
           name: setup-builder-home
           resources: {}
         - args:
-          - step
-          - git
-          - merge
-          - --verbose
-          - --baseSHA
-          - $(params.PULL_BASE_SHA)
-          - --sha
-          - $(params.PULL_PULL_SHA)
-          - --baseBranch
-          - $(params.PULL_BASE_REF)
-          command:
-          - jx
-          image: gcr.io/jenkinsxio/builder-jx:2.1.142-761
-          name: git-merge
-          resources: {}
-        - args:
-          - ls -al; pwd; cat VERSION
-          command:
-          - /bin/sh
-          - -c
-          image: gcr.io/jenkinsxio/jx-cli:latest
-          name: version-debug
-          resources: {}
-        - args:
           - gitops
           - variables
-          - --version-file
-          - /workspace/source/VERSION
           command:
           - jx
           image: gcr.io/jenkinsxio/jx-cli:latest
@@ -316,7 +297,7 @@ spec:
           command:
           - /bin/sh
           - -c
-          image: gcr.io/jenkinsxio/jx-cli:3.0.370
+          image: gcr.io/jenkinsxio/jx-cli:3.0.376
           name: promote-jx-promote
           resources: {}
         volumes:
