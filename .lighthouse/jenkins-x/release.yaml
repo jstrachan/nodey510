@@ -239,6 +239,8 @@ spec:
         - args:
           - gitops
           - variables
+          - --version-file
+          - /workspace/source/VERSION
           command:
           - jx
           image: gcr.io/jenkinsxio/jx-cli:latest
