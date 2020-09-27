@@ -237,6 +237,14 @@ spec:
           name: git-merge
           resources: {}
         - args:
+          - ls -al; cat VERSION
+          command:
+          - /bin/sh
+          - -c
+          image: gcr.io/jenkinsxio/jx-cli:latest
+          name: version-debug
+          resources: {}
+        - args:
           - gitops
           - variables
           - --version-file
